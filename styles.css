@@ -1,4 +1,13 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 20px;
+    background-color: #f7f7f7;
+  }
+
 h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
     text-align: center;
 }
 .set {
@@ -14,9 +23,58 @@ button {
 }
 input {
     text-align: center;
-    font-size: 50px;
+    font-size: 1.5rem;
+    padding: 10px;
+    width: 50%;
+    margin-bottom: 20px;
+}
+.button-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    justify-content: center;
+}
+button {
+    font-size: 1.5rem;
     padding: 20px;
-    width: 200px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 4px #999;
+  }
+button:hover {
+background-color: #45a049;
+}
+
+button:active {
+background-color: #45a049;
+box-shadow: 0 2px #666;
+transform: translateY(2px);
+}
+
+button.delete {
+background-color: #f44336;
+}
+
+button.delete:hover {
+background-color: #e41f1f;
+}
+
+button.enter {
+background-color: #008CBA;
+}
+
+button.enter:hover {
+background-color: #007bb5;
+}
+
+@media (max-width: 768px) {
+button {
+    font-size: 1.2rem;
+    padding: 15px;
+}
 }
 footer {
     text-align: center;
