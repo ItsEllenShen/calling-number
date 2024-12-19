@@ -15,12 +15,14 @@ numberButtons.forEach(button => {
     });
   });
 
-deleteButton.addEventListener("touchstart", () => {
+deleteButton.addEventListener("touchstart", event => {
+        event.preventDefault();
 currentNumber = currentNumber.slice(0, -1); // 刪除最後一個字元
 input.value = currentNumber; // 更新輸入框顯示
 });
 
-enterButton.addEventListener("touchstart", () => {
+enterButton.addEventListener("touchstart", event => {
+        event.preventDefault();
     if (currentNumber) { // 確保欄位不是空的
         sound.play();
         currentNumber = ""; // 清空數字
