@@ -23,17 +23,9 @@ input.value = currentNumber; // 更新輸入框顯示
 enterButton.addEventListener("touchstart", () => {
     if (currentNumber) { // 確保欄位不是空的
         sound.play();
-        announceNumber(message);
         currentNumber = ""; // 清空數字
         input.value = ""; // 清空輸入框
     } else {
       alert("請輸入取餐編號！");
     }
   });
-
-function announceNumber(text){
-    const synth = window.speechSynthesis;
-    const utterance = new SpeechSynthesisUtterance(`請取餐編號 ${currentNumber} 客人取餐`);
-    utterance.lang = "zh-TW";
-    synth.speak(utterance);
-};
