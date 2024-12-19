@@ -33,7 +33,7 @@ enterButton.addEventListener("touchstart", event => {
     }
   });
 
-  function announceNumber(text) {
+  function announceNumber(number) {
       const synth = window.speechSynthesis; // 語音 API
         const utterance = new SpeechSynthesisUtterance(`請取餐編號 ${currentNumber} 客人取餐 謝謝`);
         utterance.lang = "zh-TW"; // 設定語言，可改為 "zh-TW" 用中文播報
