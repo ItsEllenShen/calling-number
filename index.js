@@ -26,7 +26,7 @@ enterButton.addEventListener("touchstart", event => {
     if (currentNumber) { // 確保欄位不是空的
         sound.play();
         const message = `請取餐編號 ${currentNumber} 客人取餐 謝謝`;
-        speak(message);
+        announceNumber(currentNumber);
         currentNumber = ""; // 清空數字
         input.value = ""; // 清空輸入框
     } else {
@@ -34,12 +34,10 @@ enterButton.addEventListener("touchstart", event => {
     }
   });
 
-  function speak(text) {
-    const speech = new SpeechSynthesisUtterance();
-    speech.lang="zh-TW";
-    speech.text = text;
-    speech.rate = 2;
-    speech.pitch = 1;
-    window.speechSynthesis.speak(speech);
+  function announceNumber(text) {
+      const synth = window.speechSynthesis; // 語音 API
+        const utterance = new SpeechSynthesisUtterance(`請取餐編號 ${currentNumber} 客人取餐 謝謝`);
+        utterance.lang = "zh-TW"; // 設定語言，可改為 "zh-TW" 用中文播報
+        synth.speak(utterance);
   };
   
