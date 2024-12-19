@@ -25,7 +25,6 @@ enterButton.addEventListener("touchstart", event => {
         event.preventDefault();
     if (currentNumber) { // 確保欄位不是空的
         sound.play();
-        const message = `請取餐編號 ${currentNumber} 客人取餐 謝謝`;
         announceNumber(currentNumber);
         currentNumber = ""; // 清空數字
         input.value = ""; // 清空輸入框
