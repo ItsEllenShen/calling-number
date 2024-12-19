@@ -34,9 +34,26 @@ enterButton.addEventListener("touchstart", event => {
   });
 
   function announceNumber(number) {
-      const synth = window.speechSynthesis; // 語音 API
-        const utterance = new SpeechSynthesisUtterance(`請取餐編號 ${currentNumber} 客人取餐 謝謝`);
-        utterance.lang = "zh-TW"; // 設定語言，可改為 "zh-TW" 用中文播報
-        synth.speak(utterance);
+  if (!window.speechSynthesis) {
+    alert("您的瀏覽器不支持語音功能！");
+    return;
+  }
+
+  const synth = window.speechSynthesis; // 語音 API
+  const utterance = new SpeechSynthesisUtterance(`請取餐號碼 ${number}`); // 中文播報
+  utterance.lang = "zh-TW"; // 設定語言為中文
+
+  // 語音播放完成後的回調
+  utterance.onend = () => {
+    console.log(`語音播報完成：${number}`);
   };
-  
+
+  // 處理錯誤（例如語音播放被阻止）
+  utterance.onerror = (event) => {
+    console.error("語音播放出錯：", event.error);
+    alert("語音播放失敗，請檢查設備音效或瀏覽器設定！");
+  };
+
+  // 播放語音
+  synth.speak(utterance);
+}
