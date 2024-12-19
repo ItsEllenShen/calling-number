@@ -25,9 +25,21 @@ enterButton.addEventListener("touchstart", event => {
         event.preventDefault();
     if (currentNumber) { // 確保欄位不是空的
         sound.play();
+        const message = `請取餐編號 ${currentNumber} 客人取餐 謝謝`;
+        speak(message);
         currentNumber = ""; // 清空數字
         input.value = ""; // 清空輸入框
     } else {
       alert("請輸入取餐編號！");
     }
   });
+
+  function speak(text) {
+    const speech = new SpeechSynthesisUtterance();
+    speech.lang="zh-TW";
+    speech.text = text;
+    speech.rate = 2;
+    speech.pitch = 1;
+    window.speechSynthesis.speak(speech);
+  };
+  
