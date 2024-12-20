@@ -24,8 +24,6 @@ enterButton.addEventListener("click", () => {
     if (currentNumber) { // 確保欄位不是空的
         sound.play();
         localStorage.setItem("currentNumber", number);
-        const message = `請取餐編號 ${currentNumber} 客人取餐 謝謝`;
-        speak(message);
         currentNumber = ""; // 清空數字
         input.value = ""; // 清空輸入框
     } else {
