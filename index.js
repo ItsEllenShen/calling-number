@@ -57,11 +57,3 @@ enterButton.addEventListener("touchstart", event => {
   // 播放語音
   synth.speak(utterance);
 }
-
-document.getElementById("testVoice").addEventListener("touchstart", event => {
-    event.preventDefault();
-    const utterance = new SpeechSynthesisUtterance("這是一個測試");
-    utterance.lang = "zh-TW";
-    utterance.onerror = () => alert("語音功能失敗，請檢查瀏覽器或設備設置！");
-    speechSynthesis.speak(utterance);
-});
