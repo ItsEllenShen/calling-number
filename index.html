@@ -4,39 +4,27 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Thai To Go</title>
+  <title>Thai To Go Numbering</title>
   <link rel="stylesheet" href="styles.css">
   <link href="https://fonts.googleapis.com/css?family=Arvo" rel="stylesheet">
 </head>
-
 <body>
-
-  <h1 id="title">📢 Calling Number 📢</h1>
-  <div class="set">
-    <input id="numberInput" placeholder="取餐編號" value="" readonly>
-    <br/>
-    <br/>
-    <div class="button-grid">
-    <button class="number one" data-value="1">1</button>
-    <button class="number two" data-value="2">2</button>
-    <button class="number three" data-value="3">3</button>
-    <button class="number four" data-value="4">4</button>
-    <button class="number five" data-value="5">5</button>
-    <button class="number six" data-value="6">6</button>
-    <button class="number seven" data-value="7">7</button>
-    <button class="number eight" data-value="8">8</button>
-    <button class="number nine" data-value="9">9</button>
-    <button class="number zero" data-value="0">0</button>
-    <button class="delete">刪除</button>
-    <button class="enter">確認</button>
+  <div class="customer-container">
+    <h1>👩‍🍳 取餐編號 👩‍🍳</h1>
+    <div class="number-display">
+      <h2>編號：
+        <div class="display">
+          <span id="currentNumber">-</span>
+        </div>
+      </h2>
+    </div>
+    <h3>請前往取餐，享受美味餐點！</h3>
   </div>
-  </div>
-  <audio id="dingSound" src="./sounds/ding-dong-81717.mp3" preload="auto"></audio>
-
   <footer>
-    Made with ❤️ by CHA.
+    ❤️ 金興泰料 感謝您的耐心等候 ❤️
   </footer>
-  <script src="index.js" charset="utf-8"></script>
+  <script src="index.js"></script>
 </body>
+
 
 </html>
