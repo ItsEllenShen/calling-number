@@ -7,19 +7,22 @@ const sound = document.getElementById("dingSound");
 let currentNumber = "";
 
 numberButtons.forEach(button => {
-    button.addEventListener("click", () => {
+    button.addEventListener("touchstart", event => {
+    event.preventDefault();
       const value = button.dataset.value; // 取得按鈕的數字
       currentNumber += value; // 將數字加到 currentNumber
       input.value = currentNumber; // 更新輸入框顯示
     });
   });
 
-deleteButton.addEventListener("click", () => {
+deleteButton.addEventListener("touchstart", event => {
+    event.preventDefault();
 currentNumber = currentNumber.slice(0, -1); // 刪除最後一個字元
 input.value = currentNumber; // 更新輸入框顯示
 });
 
-enterButton.addEventListener("click", () => {
+enterButton.addEventListener("touchstart", event => {
+    event.preventDefault();
     if (currentNumber) { // 確保欄位不是空的
         sound.play();
         announceNumber(currentNumber);
@@ -54,3 +57,11 @@ enterButton.addEventListener("click", () => {
   // 播放語音
   synth.speak(utterance);
 }
+
+document.getElementById("testVoice").addEventListener("touchstart", event => {
+    event.preventDefault();
+    const utterance = new SpeechSynthesisUtterance("這是一個測試");
+    utterance.lang = "zh-TW";
+    utterance.onerror = () => alert("語音功能失敗，請檢查瀏覽器或設備設置！");
+    speechSynthesis.speak(utterance);
+});
