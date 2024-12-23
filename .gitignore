@@ -1,0 +1,36 @@
+# 系統產生的臨時文件
+.DS_Store
+Thumbs.db
+
+# 編輯器或 IDE 暫存文件
+*.swp
+*.tmp
+*.bak
+*.old
+.vscode/
+.idea/
+
+# node_modules/ (如果前端專案使用了 npm)
+node_modules/
+
+# 測試相關
+coverage/
+*.test.js
+*.spec.js
+
+
+# 環境設定文件（例如配置 API 金鑰等）
+.env
+.env.local
+.env.*.local
+
+# 暫存檔案
+*.cache
+*.pid
+
+# 日誌文件
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
