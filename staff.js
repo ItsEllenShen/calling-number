@@ -21,6 +21,7 @@ input.value = currentNumber; // 更新輸入框顯示
 });
 
 enterButton.addEventListener("click", () => {
+    const number = input.value;
     if (currentNumber) { // 確保欄位不是空的
         sound.play();
         localStorage.setItem("currentNumber", number);
