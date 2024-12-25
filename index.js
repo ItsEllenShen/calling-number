@@ -14,7 +14,7 @@ ws.addEventListener('message', (event) => {
         const data = JSON.parse(event.data); // 嘗試解析消息為 JSON
         if (data.type === 'update' && data.number) {
             // 更新叫號頁面
-            currentNumberDisplay.textContent = `Current Number: ${data.number}`;
+            currentNumberDisplay.textContent = `${data.number}`;
             currentNumberDisplay.classList.add("blink");
 
             // 添加動畫結束後移除類名的邏輯
