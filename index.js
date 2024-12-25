@@ -11,7 +11,7 @@ ws.addEventListener('message', (event) => {
     console.log('Message received from server:', event.data); // 日誌檢查消息內容
     try {
         const data = JSON.parse(event.data);
-        if (data.type === 'update') {
+        if (data.type === 'update' && data.number) {
             console.log('Update message received:', data.number); // 確認解析出的數據
             currentNumberDisplay.textContent = `${data.number}`;
             currentNumberDisplay.classList.add("blink");
