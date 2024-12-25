@@ -8,19 +8,20 @@ ws.addEventListener('open', () => {
 
 // 當接收到來自服務器的消息時
 ws.addEventListener('message', (event) => {
-    console.log('Message from server:', event.data);
-
+    console.log('Message received from server:', event.data); // 日誌檢查消息內容
     try {
-        const data = JSON.parse(event.data); // 嘗試解析消息為 JSON
-        if (data.type === 'update' && data.number) {
-            // 更新叫號頁面
+        const data = JSON.parse(event.data);
+        if (data.type === 'update') {
+            console.log('Update message received:', data.number); // 確認解析出的數據
             currentNumberDisplay.textContent = `${data.number}`;
             currentNumberDisplay.classList.add("blink");
 
-            // 添加動畫結束後移除類名的邏輯
+            // 確保動畫結束後移除類名
             currentNumberDisplay.addEventListener("animationend", () => {
                 currentNumberDisplay.classList.remove("blink");
             }, { once: true });
+        } else {
+            console.warn('Message type not handled:', data.type);
         }
     } catch (error) {
         console.error('Error parsing WebSocket message:', error);
