@@ -10,11 +10,16 @@ h1 {
     margin-bottom: 20px;
     text-align: center;
 }
+
 h2 {
-    margin: 100px;
-    font-size: 30px;
+    margin: 0;  /* 去掉多餘的 margin */
+    font-size: 40px;
     padding: 15px 25px;
+    white-space: nowrap;  /* 防止換行 */
+    overflow: hidden;  /* 隱藏超出範圍的文字 */
+    text-overflow: ellipsis; /* 超過部分顯示省略號 */
 }
+
 span {
     font-size: 50px;
     color: #e41f1f;
