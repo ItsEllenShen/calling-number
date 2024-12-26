@@ -9,17 +9,15 @@ h1 {
     font-size: 2rem;
     margin-bottom: 20px;
     text-align: center;
-    z-index: 1;
 }
 
 h2 {
     margin: 0;  /* 去掉多餘的 margin */
-    font-size: 40px;
+    font-size: 2rem;
     padding: 15px 25px;
     white-space: nowrap;  /* 防止換行 */
     overflow: hidden;  /* 隱藏超出範圍的文字 */
     text-overflow: ellipsis; /* 超過部分顯示省略號 */
-    z-index: 1;
 }
 
 .gif-container {
@@ -39,15 +37,13 @@ h2 {
     opacity: 0;
     transition: opacity 1s ease-in-out;
     }
-    
+
 .gif-container img.active {
     opacity: 1;  /* 顯示當前活動的 GIF */
     }
 
 span {
-    font-size: 50px;
     color: #e41f1f;
-    z-index: 1;
 }
 .set {
     text-align: center;
