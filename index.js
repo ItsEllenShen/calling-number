@@ -2,6 +2,7 @@ let ws;
 const connectWebSocket = () => {
     ws = new WebSocket('wss://staff-calling.onrender.com');
     const currentNumberDisplay = document.getElementById("currentNumber");
+    const sound = document.getElementById("dingSound");
 
 // 當 WebSocket 連接成功時
     ws.addEventListener('open', () => {
@@ -15,6 +16,7 @@ const connectWebSocket = () => {
         try {
             const data = JSON.parse(event.data); // 嘗試解析消息為 JSON
             if (data.type === 'update' && data.number) {
+                sound.play();
                 // 更新叫號頁面
                 currentNumberDisplay.textContent = `${data.number}`;
                 currentNumberDisplay.classList.add("blink");
