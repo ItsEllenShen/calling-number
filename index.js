@@ -8,7 +8,8 @@ const connectWebSocket = () => {
     let isAudioEnabled = false;
 
     // 啟用音效按鈕的事件監聽器
-    enableAudioButton.addEventListener('click', () => {
+    enableAudioButton.addEventListener('touchstart', event => {
+        event.preventDefault();
         sound.play().then(() => {
             isAudioEnabled = true;
             enableAudioButton.style.display = 'none'; // 隱藏按鈕
